@@ -13,3 +13,5 @@ Este projeto é uma aplicação web de e-commerce desenvolvida como parte da ava
 - [x] **Página de Produtos:** Listagem completa com layout de filtros laterais e seletor de ordenação.
 - [x] **Página de Visualização de Produto:** Roteamento dinâmico (`/produto/:id`) mostrando detalhes, avaliação e seleção de tamanhos.
 - [x] **Componentização:** Uso de `Header`, `Footer` e `ProductCard` reutilizáveis.
+
+Link de acesso: https://projeto-front-end-mini-loja.vercel.app/ 
