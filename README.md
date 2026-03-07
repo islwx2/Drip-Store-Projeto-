@@ -1,16 +1,15 @@
-# React + Vite
+# 🛒 Drip Store - Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web de e-commerce desenvolvida como parte da avaliação da Digital College. Ele simula uma loja virtual com consumo real de dados.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
+* **React (Vite):** Para a construção da interface (Single Page Application).
+* **React Router DOM:** Para o roteamento e navegação entre as páginas.
+* **Tailwind CSS:** Para a estilização rápida e fidelidade ao design do Figma.
+* **Axios:** Para requisições HTTP e consumo da FakeStoreAPI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📋 Funcionalidades Implementadas
+- [x] **Página Inicial (Home):** Exibe os produtos em destaque consumidos da API.
+- [x] **Página de Produtos:** Listagem completa com layout de filtros laterais e seletor de ordenação.
+- [x] **Página de Visualização de Produto:** Roteamento dinâmico (`/produto/:id`) mostrando detalhes, avaliação e seleção de tamanhos.
+- [x] **Componentização:** Uso de `Header`, `Footer` e `ProductCard` reutilizáveis.
