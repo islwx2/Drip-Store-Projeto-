@@ -1,6 +1,6 @@
 # 🛒 Drip Store - Front-End
 
-Este projeto é uma aplicação web de e-commerce desenvolvida como parte da avaliação da Digital College. Ele simula uma loja virtual com consumo real de dados.
+Este projeto é uma aplicação web de e-commerce desenvolvida como parte da avaliação da Digital College através do programa Geração Tech para o curso livre de Formação Full Stack. Ele simula uma loja virtual com consumo real de dados.
 
 ## 🚀 Tecnologias Utilizadas
 * **React (Vite):** Para a construção da interface (Single Page Application).
@@ -14,4 +14,6 @@ Este projeto é uma aplicação web de e-commerce desenvolvida como parte da ava
 - [x] **Página de Visualização de Produto:** Roteamento dinâmico (`/produto/:id`) mostrando detalhes, avaliação e seleção de tamanhos.
 - [x] **Componentização:** Uso de `Header`, `Footer` e `ProductCard` reutilizáveis.
 
-Link de acesso: https://projeto-front-end-mini-loja.vercel.app/ 
+Atividade desenvolvida em dupla por Islane Costa e Patrício Felício.
+
+Link de deploy: https://projeto-front-end-mini-loja.vercel.app/ 
