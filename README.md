@@ -28,6 +28,6 @@ O projeto conta com diversas páginas e lógicas dinâmicas de e-commerce:
    ```bash
    git clone <link-do-seu-repositorio>
 
-Atividade desenvolvida em dupla por Islane Costa e Patrício Felício.
+Atividade desenvolvida como parte avaliativa do curso de desenvolvimento Full Stack do programa Geração Tech. Realizado em dupla por Islane Costa e Patrício Felício.
 
 Link de deploy: https://projeto-front-end-mini-loja.vercel.app/ 
