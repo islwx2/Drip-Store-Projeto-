@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Section from '../components/section';
-import ProductListingList from '../components/AbaProdutos/productListingList';
+import ProductListingList from '../components/abaProdutos/productListingList';
 import { produtosPersonalizados } from '../data/products'; 
 import { productsData } from './homePage';
 
