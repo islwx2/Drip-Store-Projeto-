@@ -3,19 +3,17 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 import { FcGoogle } from 'react-icons/fc';
 import { FaFacebook, FaMicrosoft } from 'react-icons/fa';
-import { api, setAuthToken } from '../services/api'; // NOVO: Importa a nossa API e a função de token
+import { api, setAuthToken } from '../services/api'; 
 
 const Login = () => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState(''); // ALTERADO: 'senha' para 'password' para consistência
+  const [password, setPassword] = useState(''); 
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  // ALTERADO: Substituímos toda a função de login
   const handleLogin = async (e) => {
     e.preventDefault();
     
-    // O objeto enviado para a API deve ter as chaves 'email' e 'password'
     try {
       const response = await api.post('/usuario/token', {
         email,
@@ -24,19 +22,16 @@ const Login = () => {
 
       const token = response.data.token;
 
-      // 1. Salva o token no localStorage para persistir a sessão
       localStorage.setItem('authToken', token);
 
-      // 2. Configura o token na instância do Axios para as próximas requisições
       setAuthToken(token);
 
       alert("Login realizado com sucesso!");
-      navigate('/'); // Redireciona para a página inicial após o login
+      navigate('/'); 
 
     } catch (error) {
       console.error("Erro no login:", error);
 
-      // Pega a mensagem de erro específica do backend, se existir
       const errorMessage = error.response?.data?.error || "Email ou senha incorretos. Tente novamente.";
       alert(errorMessage);
     }

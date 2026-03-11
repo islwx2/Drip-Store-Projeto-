@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'; // useRef não é mais necessário
+import { useState, useEffect } from 'react'; 
 import Section from '../components/section';
 import Hero from '../components/hero';
 import ProductListing from '../components/HomePage/productListing';
 import { IoShirtOutline } from "react-icons/io5";
 import { PiBaseballCapLight, PiHeadphonesLight, PiPantsLight } from "react-icons/pi";
 import { GiConverseShoe } from "react-icons/gi";
-import { FaArrowLeft } from "react-icons/fa"; // 1. IMPORTAR O ÍCONE DE FLECHA
+import { FaArrowLeft } from "react-icons/fa"; 
 import airJordanImg from '../assets/Laye 1.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -37,7 +37,6 @@ const HomePage = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState(productsData);
 
-  // Este useEffect para filtrar continua funcionando perfeitamente
   useEffect(() => {
     if (!selectedCategory) {
       setFilteredProducts(productsData);
@@ -99,12 +98,11 @@ const HomePage = () => {
             ))}
           </div>
 
-          {/* 2. BOTÃO CONDICIONAL PARA LIMPAR O FILTRO */}
-          {/* Este bloco só será renderizado se 'selectedCategory' NÃO for nulo, ou seja, se um filtro estiver ativo */}
+         
           {selectedCategory && (
             <div className="text-center mt-8">
               <button
-                onClick={() => setSelectedCategory(null)} // Ação: Limpa a categoria selecionada
+                onClick={() => setSelectedCategory(null)} 
                 className="flex items-center gap-2 mx-auto text-pink-600 font-semibold hover:underline"
               >
                 <FaArrowLeft />

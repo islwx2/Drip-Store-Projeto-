@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // Adicionado o useEffect
+import { useState, useEffect } from 'react';
 import { products } from '../data/products';
 import ProductListingList from '../components/AbaProdutos/productListingList';
 import { Link, useLocation } from 'react-router-dom';
@@ -9,29 +9,21 @@ const ProductPage = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
 
-  // --- MODIFICAÇÃO 1: LER O PARÂMETRO 'categoria' DA URL ---
-  // Estava procurando por 'filter', agora procura por 'categoria'
   const categoryFromUrl = searchParams.get('categoria')?.toLowerCase() || '';
 
-  // O filtro de busca (que não está sendo usado, mas podemos manter)
   const searchQuery = searchParams.get('filter')?.toLowerCase() || '';
 
-  // --- NOVO: useEffect para definir o filtro inicial a partir da URL ---
-  // Este efeito roda UMA VEZ quando a página carrega.
   useEffect(() => {
-    // Se uma categoria veio da URL, definimos ela como o filtro inicial.
+  
     if (categoryFromUrl) {
-      // O nome da categoria precisa ser capitalizado corretamente para bater com as opções do filtro.
-      // Ex: "tênis" -> "Tênis"
       const capitalizedCategory = categoryFromUrl.charAt(0).toUpperCase() + categoryFromUrl.slice(1);
       setFilters([capitalizedCategory]);
     }
-  }, []); // O array vazio [] garante que isso rode apenas na montagem inicial do componente.
+  }, []); 
 
 
   const allFilters = [
     { label: 'Marca', options: ['Adidas', 'Balenciaga', 'K-Swiss', 'Nike', 'Puma', 'Stamp', 'OQVestir', 'JBL', 'MST'] },
-    // Adicionado as categorias que você usa no seu app para o filtro funcionar
     { label: 'Categoria', options: ['Camisetas', 'Calças', 'Bonés', 'Headphones', 'Tênis'] },
     { label: 'Gênero', options: ['Masculino', 'Feminino', 'Unisex'] },
     { label: 'Estado', options: ['Novo', 'Usado'] },
@@ -44,17 +36,12 @@ const ProductPage = () => {
   };
 
   const filteredProducts = products.filter((product) => {
-    // A lógica de busca continua igual
     const matchesSearch =
       !searchQuery ||
       product.title.toLowerCase().includes(searchQuery) ||
       product.category?.toLowerCase().includes(searchQuery);
-
-    // --- MODIFICAÇÃO 2: LÓGICA DE FILTRO ATUALIZADA ---
-    // Agora o filtro de checkbox funciona em conjunto com o da URL.
     const matchesFilter =
       filters.length === 0 ||
-      // Verificamos se alguma das opções marcadas no checkbox corresponde à categoria do produto.
       filters.some((f) => product.category === f || product.brand === f || product.gender === f || product.condition === f);
 
     return matchesSearch && matchesFilter;

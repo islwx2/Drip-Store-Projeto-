@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// MUDANÇA 1: Importar os ícones de olho
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 const Cadastro = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  
-  // MUDANÇA 2: Adicionar um estado para controlar a visibilidade da senha
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -22,8 +19,7 @@ const Cadastro = () => {
     navigate('/completar-cadastro', { 
       state: { 
         nome: nome, 
-        email: email 
-        // Não passamos a senha, a nova página pedirá para confirmá-la.
+        email: email .
       } 
     });
   };
@@ -70,13 +66,12 @@ const Cadastro = () => {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            {/* MUDANÇA 3: O campo de senha agora está dentro de uma div 'relative' */}
+           
             <div className="relative">
               <label htmlFor="password" className="sr-only">Senha</label>
               <input
                 id="password"
                 name="password"
-                // MUDANÇA 4: O tipo do input muda com base no estado 'showPassword'
                 type={showPassword ? 'text' : 'password'}
                 required
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-primary focus:border-primary sm:text-sm"
@@ -84,7 +79,6 @@ const Cadastro = () => {
                 value={senha}
                 onChange={(e) => setSenha(e.target.value)}
               />
-              {/* MUDANÇA 5: O botão com o ícone para alternar a visibilidade */}
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}

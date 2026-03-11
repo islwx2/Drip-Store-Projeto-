@@ -1,35 +1,26 @@
 import { useState } from 'react';
 import Section from '../components/section';
 import ProductListingList from '../components/AbaProdutos/productListingList';
-
-// 1. Importando os 20 produtos novos da sua pasta data
 import { produtosPersonalizados } from '../data/products'; 
-// 2. Importando os 12 produtos de destaque da sua Home
 import { productsData } from './homePage';
 
-// --- A MÁGICA DA JUNÇÃO ACONTECE AQUI ---
-// Prevenimos que o carrinho dê erro por ter dois produtos com "id: 1"
 const destaques = productsData.map(p => ({ 
   ...p, 
   id: `destaque_${p.id}` 
 }));
 
-// Traduzimos 'title' para 'name' para o texto aparecer, e ajustamos o ID
 const personalizados = produtosPersonalizados.map(p => ({ 
   ...p, 
   id: `pers_${p.id}`,
-  name: p.title // <-- Isso resolve o problema dos nomes em branco!
+  name: p.title 
 }));
 
-// Juntamos tudo num lugar só (12 da Home + 20 Novos = 32 Produtos)
 const todosOsProdutos = [...destaques, ...personalizados];
-// ----------------------------------------
 
 const ProductListingPage = () => {
   const [order, setOrder] = useState('menor-preco');
   const [filters, setFilters] = useState([]);
 
-  // Juntamos todas as categorias que existem nas duas listas
   const categoryOptions = [
     { text: 'Tênis', value: 'Tênis' },
     { text: 'Sneakers', value: 'Sneakers' },

@@ -68,10 +68,9 @@ const ProductListingList = ({ products }) => {
             </div>
             
             <div className="px-2 pb-2">
-              {/* BOTÃO COM ALTURA REDUZIDA */}
               <button 
                 onClick={handleToggleCart}
-                className={`w-full font-semibold py-1.5 text-sm rounded-lg transition mb-2 ${ // MUDANÇA AQUI: py-2 para py-1.5
+                className={`w-full font-semibold py-1.5 text-sm rounded-lg transition mb-2 ${ 
                   isInCart
                     ? 'bg-green-600 text-white hover:bg-green-700'
                     : 'bg-pink-600 text-white hover:bg-pink-700'
@@ -79,7 +78,7 @@ const ProductListingList = ({ products }) => {
               >
                 {isInCart ? 'Adicionado ao carrinho' : 'Adicionar ao carrinho'}
               </button>
-              {/* SEGUNDO BOTÃO COM ALTURA REDUZIDA */}
+            
               <Link
                 to={`/produto/${product.id}`}
                 className="w-full block text-center bg-gray-200 text-gray-700 font-semibold py-1.5 text-sm rounded-lg hover:bg-gray-300 transition" // MUDANÇA AQUI: py-2 para py-1.5

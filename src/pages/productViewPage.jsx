@@ -6,14 +6,12 @@ import ImageGallery from '../components/imageGallery';
 import ProductInfo from '../components/productInfo';
 import RelatedProducts from '../components/relatedProducts';
 
-// --- AJUSTE NO BREADCRUMB ---
-// A lógica foi simplificada para corresponder à nova imagem: Home > Categoria > Nome
 const Breadcrumbs = ({ product }) => (
   <nav className="flex items-center text-sm text-gray-500 mb-4">
     <Link to="/" className="hover:text-pink-600">Home</Link>
     <FiChevronRight className="mx-2" />
     <Link to={`/produtos?categoria=${product.category}`} className="hover:text-pink-600">
-      {product.category} {/* Exibe a categoria real do produto */}
+      {product.category} 
     </Link>
     <FiChevronRight className="mx-2" />
     <span className="font-semibold text-gray-700">{product.name}</span>
@@ -29,8 +27,6 @@ const ProductViewPage = () => {
   }
 
   const imageUrls = product.images ? product.images.map(img => img.src) : [product.image];
-
-  // A estrutura principal da página permanece a mesma
   return (
     <div className="bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">

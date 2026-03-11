@@ -4,7 +4,6 @@ import { produtosPersonalizados } from '../data/products';
 export default function DetalhesProduto() {
   const { id } = useParams();
   
-  // Busca na sua lista local
   const produto = produtosPersonalizados.find((item) => item.id === parseInt(id));
 
   if (!produto) {
