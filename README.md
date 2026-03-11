@@ -30,4 +30,4 @@ O projeto conta com diversas páginas e lógicas dinâmicas de e-commerce:
 
 Atividade desenvolvida como parte avaliativa do curso de desenvolvimento Full Stack do programa Geração Tech. Realizado em dupla por Islane Costa e Patrício Felício.
 
-Link de deploy: https://projeto-front-end-mini-loja.vercel.app/ 
+Link de deploy: https://drip-store-psi.vercel.app/
